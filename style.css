@@ -203,6 +203,20 @@ pre a .name { color: var(--amber-bright); }
 .title-card.intercept .tc-route  { color: var(--amber-dim); }
 .title-card.intercept .tc-route .arrow { color: var(--amber-bright); margin: 0 8px; }
 
+/* ---- KiCanvas PCB viewer ---- */
+.pcb-viewer-label {
+  color: var(--amber-dim);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  margin: 24px 0 8px;
+  letter-spacing: 0.1em;
+}
+
+kicanvas-embed {
+  border: 1px solid var(--amber-dim);
+  display: block;
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 600px) {
   .page { padding: 16px 12px 60px; }
