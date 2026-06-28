@@ -23,6 +23,8 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: none;
   -moz-osx-font-smoothing: unset;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 /* ---- Scanline overlay ---- */
@@ -330,8 +332,7 @@ code-window {
 @media (max-width: 600px) {
   .page { padding: 16px 12px 60px; }
   .site-footer { padding: 16px 12px 32px; }
-  pre { font-size: 12px; white-space: pre-wrap; word-break: break-word; overflow-x: hidden; }
-  .cw-code pre { white-space: pre-wrap; word-break: break-all; }
+  pre { font-size: 12px; overflow-x: auto; }
   .site-nav { padding: 10px 12px; }
   kicanvas-embed { aspect-ratio: 1 / 1; }
 }
