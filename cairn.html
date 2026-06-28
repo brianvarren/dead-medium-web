@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEAD MEDIUM -- DM-07 CAIRN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-brand">DEAD MEDIUM</a>
+  <span class="sep">/</span>
+  <a href="index.html">registry</a>
+  <span class="sep">/</span>
+  <a href="provenance.html">provenance</a>
+</nav>
+
+<div class="page">
+<pre>
+<span class="dim">CAIRN(1)              DEAD MEDIUM SIGNAL REGISTRY              CAIRN(1)</span>
+
+NAME
+     DM-07 CAIRN -- Dual-Mode Quantizer / Voltage Controlled Oscillator
+
+STATUS
+     Active: yes
+     Revision: 02
+     First logged: 2026.09.14
+
+DESCRIPTION
+     CAIRN accepts an unquantized CV signal at its primary input and
+     constrains it to user-selectable scale intervals. In VCO mode,
+     the same pitch-processing architecture generates its own signal,
+     producing a clean chromatic output across five octaves with
+     sub-cent accuracy.
+
+     The dual-mode architecture allows a single 10HP module to serve
+     as either a precision quantizer or a tracking oscillator
+     depending on system requirements.
+
+SPECIFICATIONS
+     Width ..............  10HP
+     Depth ..............  25mm
+     Current ............  +12V: 45mA / -12V: 8mA
+     ADC ................  ADS8866, 16-bit, 100kSPS
+     DAC ................  DAC8551, 16-bit
+     MCU ................  RP2040 / RP2350
+     Pitch accuracy .....  +/-0.5 cent / 5 octaves
+     Modes ..............  QUANTIZER / VCO
+
+ACQUISITION
+     Assembled unit .....  <a href="#">[storefront]</a>
+     Build documentation  <a href="#">[build guide]</a>
+     Source .............  <a href="#">[github]</a>
+
+CHANGELOG
+     2026.09.14   REV 01   Initial release. Quantizer mode only.
+     2026.11.02   REV 02   VCO mode added. DAC output buffer revised.
+                           LED driver moved to 74HC595.
+
+<span class="dim">DEAD MEDIUM                  2026.11.02                          CAIRN(1)</span>
+</pre>
+</div>
+
+<footer class="site-footer">
+  <div>DEAD MEDIUM SIGNAL REGISTRY v1.0</div>
+  <div>uptime: ████d ██h ██m</div>
+  <div>(c) 2026 Brian Varren. All designs open-source under MIT license.</div>
+</footer>
+
+</body>
+</html>

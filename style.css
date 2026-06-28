@@ -1,0 +1,211 @@
+/* ===============================================
+   DEAD MEDIUM -- DESIGN TOKENS
+   =============================================== */
+
+:root {
+  --bg:           #0a0a08;
+  --amber:        #ffb000;
+  --amber-bright: #ffc840;
+  --amber-dim:    #a06800;
+  --amber-glow:   rgba(255, 176, 0, 0.08);
+  --scanline:     rgba(0, 0, 0, 0.12);
+  --font-mono:    'Share Tech Mono', monospace;
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--amber);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unset;
+}
+
+/* ---- Scanline overlay ---- */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    var(--scanline) 2px,
+    var(--scanline) 4px
+  );
+  opacity: 0.3;
+}
+
+/* ---- Links ---- */
+a {
+  color: var(--amber-bright);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---- Site nav ---- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--amber-dim);
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+}
+
+.site-nav a {
+  color: var(--amber-dim);
+  text-decoration: none;
+}
+
+.site-nav a:hover { color: var(--amber); text-decoration: none; }
+.site-nav a.active { color: var(--amber); }
+.site-nav .nav-brand { color: var(--amber-bright); }
+.site-nav .sep { color: var(--amber-dim); padding: 0 10px; }
+
+/* ---- Page container ---- */
+.page {
+  max-width: 80ch;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+/* ---- Terminal content ---- */
+pre {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  white-space: pre;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+pre a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+pre a:hover {
+  background: var(--amber-glow);
+  text-decoration: none;
+}
+
+pre a .name { color: var(--amber-bright); }
+
+.dim  { color: var(--amber-dim); }
+.bright { color: var(--amber-bright); }
+
+/* ---- Cursor ---- */
+.cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1em;
+  background: var(--amber);
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ---- Site footer ---- */
+.site-footer {
+  max-width: 80ch;
+  margin: 0 auto;
+  padding: 24px 24px 40px;
+  color: var(--amber-dim);
+  opacity: 0.5;
+  line-height: 1.8;
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+/* ===============================================
+   TITLE CARDS (render-only, title-cards.html)
+   =============================================== */
+
+.title-card {
+  background: var(--bg);
+  border: 1px solid var(--amber-dim);
+  aspect-ratio: 16 / 9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.title-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 176, 0, 0.04) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.tc-id    { color: var(--amber-dim);    letter-spacing: 0.2em;  margin-bottom: 8px; }
+.tc-name  { color: var(--amber-bright); letter-spacing: 0.3em;  margin-bottom: 6px; font-size: 32px; }
+.tc-desc  { color: var(--amber);        letter-spacing: 0.15em; text-transform: uppercase; }
+
+.tc-series {
+  letter-spacing: 0.18em;
+  color: var(--amber-dim);
+  text-transform: uppercase;
+  position: absolute;
+  top: 24px;
+  left: 28px;
+}
+
+.tc-url {
+  letter-spacing: 0.1em;
+  color: var(--amber-dim);
+  position: absolute;
+  bottom: 24px;
+  right: 28px;
+}
+
+.title-card.field-test .tc-meta {
+  letter-spacing: 0.15em;
+  color: var(--amber-dim);
+  margin-top: 16px;
+}
+
+.title-card.intercept .tc-intercept-header {
+  letter-spacing: 0.2em;
+  color: var(--amber-dim);
+  margin-bottom: 20px;
+}
+
+.title-card.intercept .tc-signal {
+  letter-spacing: 0.12em;
+  color: var(--amber);
+  margin-bottom: 4px;
+}
+
+.title-card.intercept .tc-route  { color: var(--amber-dim); }
+.title-card.intercept .tc-route .arrow { color: var(--amber-bright); margin: 0 8px; }
+
+/* ---- Responsive ---- */
+@media (max-width: 600px) {
+  .page { padding: 16px 12px 60px; }
+  pre { font-size: 12px; }
+  .site-nav { padding: 10px 12px; }
+}
