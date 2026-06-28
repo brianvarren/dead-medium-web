@@ -76,7 +76,7 @@ a:hover {
 
 /* ---- Page container ---- */
 .page {
-  max-width: 80ch;
+  max-width: 96ch;
   margin: 0 auto;
   padding: 32px 24px 80px;
 }
@@ -120,7 +120,7 @@ pre a .name { color: var(--amber-bright); }
 
 /* ---- Site footer ---- */
 .site-footer {
-  max-width: 80ch;
+  max-width: 96ch;
   margin: 0 auto;
   padding: 24px 24px 40px;
   color: var(--amber-dim);
@@ -218,8 +218,14 @@ kicanvas-embed {
 }
 
 /* ---- Responsive ---- */
+@media (max-width: 960px) {
+  .page, .site-footer { padding-left: 16px; padding-right: 16px; }
+}
+
 @media (max-width: 600px) {
   .page { padding: 16px 12px 60px; }
+  .site-footer { padding: 16px 12px 32px; }
   pre { font-size: 12px; }
   .site-nav { padding: 10px 12px; }
+  kicanvas-embed { aspect-ratio: 1 / 1; }
 }
