@@ -87,7 +87,8 @@ a:hover {
 pre {
   font-family: var(--font-mono);
   font-size: 14px;
-  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-word;
   overflow-x: auto;
   line-height: 1.5;
 }
@@ -332,7 +333,7 @@ code-window {
 @media (max-width: 600px) {
   .page { padding: 16px 12px 60px; }
   .site-footer { padding: 16px 12px 32px; }
-  pre { font-size: 12px; white-space: pre-wrap; word-break: break-word; }
+  pre { font-size: 12px; }
   .cw-code pre { white-space: pre; overflow-x: visible; }
   .site-nav { padding: 10px 12px; }
   kicanvas-embed { aspect-ratio: 1 / 1; }
