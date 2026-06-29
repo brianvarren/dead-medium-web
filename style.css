@@ -133,11 +133,17 @@ pre a .name { color: var(--amber-bright); }
   max-width: 125ch;
   margin: 0 auto;
   padding: 24px 24px 40px;
-  color: var(--amber-dim);
-  opacity: 0.5;
+  color: var(--amber);
   line-height: 1.8;
   font-family: var(--font-mono);
   font-size: 14px;
+}
+
+.page-prompt {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  margin-top: 8px;
+  color: var(--amber);
 }
 
 /* ===============================================
